@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import arrow
-
 from sqlalchemy import Column, DateTime, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
