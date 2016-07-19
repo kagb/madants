@@ -1,16 +1,31 @@
 # -*- coding: utf-8 -*-
 
+import arrow
 
-class Queen(object):
+from sqlalchemy import Column, DateTime, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
-    domain = 'Queen'
+Base = declarative_base()
 
 
-class Ant(object):
+class Model(Base):
+    id = Column(Integer, primary_key=True)
+    create_time = Column(DateTime, default=arrow.now().naive)
+
+
+class Ant(Model):
 
     domain = 'Ant'
 
+    name = Column(String)
+    email = Column(String)
+    passwd = Column(String)
+    website_id = Column(Integer)
+    refer_id = Column(Integer)
 
-class Suger(object):
 
-    domain = 'Suger'
+class WebSite(Model):
+
+    domain = 'WebSite'
+
+    name = Column(String)
