@@ -1,2 +1,2 @@
 # MadAnts
-# Ants can do everything
+# Ants do everything
