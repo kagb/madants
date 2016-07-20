@@ -1,2 +1,2 @@
 arrow==0.5.4
-sqlalchemy==1.0.12
+peewee==2.6.3
