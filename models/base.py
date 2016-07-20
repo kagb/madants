@@ -5,7 +5,7 @@ import datetime
 from peewee import DateTimeField, IntegerField, MySQLDatabase
 from playhouse.signals import Model
 
-from madants.config import MYSQL_HOST, MYSQL_PASSWD, MYSQL_USER
+from madants.conf import MYSQL_HOST, MYSQL_PASSWD, MYSQL_USER
 
 
 DATABASE = MySQLDatabase('')

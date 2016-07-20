@@ -7,6 +7,6 @@ MYSQL_PASSWD = ''
 
 
 try:
-    from .local_config import *
+    from .local_conf import *
 except ImportError:
     pass
