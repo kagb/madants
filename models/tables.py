@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from peewee import ForeignKeyField, CharField
-from .base import BaseModel
+from peewee import CharField, ForeignKeyField
+
+from models.base import BaseModel
 
 
 class WebSite(BaseModel):
