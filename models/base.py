@@ -5,8 +5,14 @@ import datetime
 from peewee import DateTimeField, IntegerField, MySQLDatabase
 from playhouse.signals import Model
 
+from conf import MYSQL_DB_NAME, MYSQL_HOST, MYSQL_PASSWD, MYSQL_USER
 
-DATABASE = MySQLDatabase('')
+DATABASE = MySQLDatabase(
+    MYSQL_DB_NAME,
+    user=MYSQL_USER,
+    host=MYSQL_HOST,
+    passwd=MYSQL_PASSWD
+)
 
 
 class BaseModel(Model, object):

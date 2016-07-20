@@ -1,2 +1,2 @@
-arrow==0.5.4
+mysql-python==1.2.5
 peewee==2.6.3

@@ -1,0 +1,8 @@
+*.pyc
+*.log
+*.pid
+*.tmp
+*.swp
+*.property
+local_conf.py
+test_conf.py
