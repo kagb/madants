@@ -1,2 +1,4 @@
 mysql-python==1.2.5
 peewee==2.6.3
+requests==2.10.0
+pillow==3.3.0

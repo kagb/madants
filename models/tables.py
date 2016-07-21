@@ -10,6 +10,7 @@ class WebSite(BaseModel):
     domain = 'WebSite'
 
     name = CharField()
+    home = CharField()
 
 
 class Army(BaseModel):

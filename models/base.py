@@ -2,7 +2,7 @@
 
 import datetime
 
-from peewee import DateTimeField, IntegerField, MySQLDatabase
+from peewee import DateTimeField, PrimaryKeyField, MySQLDatabase
 from playhouse.signals import Model
 
 from conf import MYSQL_DB_NAME, MYSQL_HOST, MYSQL_PASSWD, MYSQL_USER
@@ -17,8 +17,17 @@ DATABASE = MySQLDatabase(
 
 class BaseModel(Model, object):
 
-    class Meta:
+    domain = 'BaseModel'
+
+    class Meta(object):
         database = DATABASE
 
-    id = IntegerField(primary_key=True)
+    id = PrimaryKeyField(primary_key=True)
     create_time = DateTimeField(default=datetime.datetime.now)
+
+    def __repr__(self):
+        return '<domain={0}, id={1}, create_time={2}>'.format(
+            self.domain,
+            self.id,
+            self.create_time,
+        )
