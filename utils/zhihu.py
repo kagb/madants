@@ -56,15 +56,14 @@ def login(session, secret, account):
     return session
 
 
-def signup(session, email, secret):
+def signup(session, fullname, email, secret):
     post_url = 'http://www.zhihu.com/register/email'
     postdata = {
         '_xsrf': get_xsrf(session),
+        'fullname': fullname,
         'password': secret,
-        'remember_me': 'true',
-        'email': email,
+        'account': email,
     }
     postdata["captcha"] = get_captcha(session, 'register')
     r = session.post(post_url, data=postdata, headers=PC_HEADERS)
-    print r
-
+    print r.text
