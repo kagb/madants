@@ -5,7 +5,7 @@ import re
 import time
 from PIL import Image
 
-from conf import PC_HEADERS
+from conf import PC_HEADERS, CAPTCHA_PATH
 
 
 def get_xsrf(session):
@@ -21,10 +21,10 @@ def get_captcha(session, type='login'):
     t = str(int(time.time()*1000))
     captcha_url = 'http://www.zhihu.com/captcha.gif?r={0}&type={1}'.format(t, type)
     r = session.get(captcha_url, headers=PC_HEADERS)
-    with open('captcha.jpg', 'wb') as f:
+    with open(CAPTCHA_PATH, 'wb') as f:
         f.write(r.content)
         f.close()
-    im = Image.open('captcha.jpg')
+    im = Image.open(CAPTCHA_PATH)
     im.show()
     im.close()
     captcha = raw_input("please input the captcha\n>")
